@@ -127,7 +127,7 @@ ul { padding: 0; list-style: none; }
 .section-copy { margin-top: 1.75rem; max-width: 38rem; font-size: 1.05rem; line-height: 1.85; color: var(--muted-foreground); }
 
 .split { display: grid; align-items: center; gap: 3.5rem; }
-.service-art { margin: 0 auto; width: 100%; max-width: 28rem; }
+.service-art { margin: 0 auto; width: 100%; max-width: 43rem; }
 .feature-list { margin-top: 2rem; display: grid; gap: 1rem; font-size: 0.875rem; font-weight: 600; }
 .feature-list li { display: flex; align-items: center; gap: 0.75rem; }
 .check-icon { display: inline-flex; height: 1.7rem; width: 1.7rem; align-items: center; justify-content: center; border-radius: 999px; background: color-mix(in oklch, var(--primary) 16%, transparent); color: var(--primary); }
@@ -149,7 +149,7 @@ ul { padding: 0; list-style: none; }
 .testimonial-role { margin-top: 0.3rem; font-size: 0.8rem; color: var(--muted-foreground); }
 
 .pricing-head { display: grid; align-items: end; gap: 3rem; }
-.pricing-art { display: none; width: 11rem; }
+.pricing-art { display: none; width: 18rem; }
 .price-grid { margin-top: 3.5rem; display: grid; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .price-item { padding: 2.25rem 0; }
 .price-item + .price-item { border-top: 1px solid var(--border); }
