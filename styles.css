@@ -69,7 +69,7 @@ ul { padding: 0; list-style: none; }
 .nav-logo { height: 3rem; width: auto; }
 .nav-links { display: none; align-items: center; gap: 2rem; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
 .nav-link { letter-spacing: 0.16em; color: var(--hero-muted); transition: color 180ms ease; }
-.nav-link:hover { color: var(--hero-foreground); }
+.nav-link:hover {color: #21296e; background: #fff; border: 1px solid #fff; filter: none;}
 
 .hero-grid {
   position: relative;
