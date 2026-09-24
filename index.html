@@ -264,5 +264,37 @@
       <img src="img/logo.svg" alt="Serv.eth" />
       <p>Ethereum support, around the clock.</p>
     </footer>
+	<script>
+      (() => {
+        const carousel = document.querySelector('.testimonial-carousel');
+        const track = carousel?.querySelector('.testimonial-track');
+        const cards = [...(carousel?.querySelectorAll('.testimonial-card') || [])];
+        const count = carousel?.querySelector('.carousel-count span');
+        const dots = carousel?.querySelector('.carousel-dots');
+        let selected = 0;
+        const show = (index) => {
+          selected = (index + cards.length) % cards.length;
+          track?.style.setProperty('--testimonial-index', selected);
+          if (count) count.textContent = String(selected + 1).padStart(2, '0');
+          dots?.querySelectorAll('button').forEach((dot, i) => dot.setAttribute('aria-current', i === selected ? 'true' : 'false'));
+        };
+        cards.forEach((_, index) => {
+          const dot = document.createElement('button');
+          dot.type = 'button'; dot.className = 'carousel-dot'; dot.setAttribute('aria-label', `Show testimonial ${index + 1}`);
+          dot.addEventListener('click', () => show(index)); dots?.append(dot);
+        });
+        carousel?.querySelector('.testimonial-prev')?.addEventListener('click', () => show(selected - 1));
+        carousel?.querySelector('.testimonial-next')?.addEventListener('click', () => show(selected + 1));
+        carousel?.addEventListener('keydown', (event) => { if (event.key === 'ArrowLeft') show(selected - 1); if (event.key === 'ArrowRight') show(selected + 1); });
+        show(0);
+
+        document.querySelectorAll('[data-dialog]').forEach((button) => button.addEventListener('click', () => document.getElementById(button.dataset.dialog)?.showModal()));
+        document.querySelectorAll('.pricing-dialog').forEach((dialog) => {
+          dialog.querySelector('.dialog-close')?.addEventListener('click', () => dialog.close());
+          dialog.querySelector('.dialog-contact')?.addEventListener('click', () => dialog.close());
+          dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+        });
+      })();
+    </script>		  
   </body>
 </html>
