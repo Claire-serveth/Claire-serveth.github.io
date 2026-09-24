@@ -175,24 +175,38 @@
       <!-- Testimonials -->
       <section id="testimonials" class="testimonials-section">
         <div class="testimonials-inner">
-          <p class="section-kicker">03 / Testimonials</p>
-          <h2 class="section-title">What our clients say about us</h2>
-          <div class="testimonial-grid">
-            <article class="testimonial-item">
-              <blockquote>“Safe is extremely grateful for service the serv.eth team provides. They're able to operate autonomously in ambiguity and have been extremely helpful during challenging situations, all while still managing to deliver an exceptional service.”</blockquote>
-              <p class="testimonial-author">Rudy Dube</p>
-              <p class="testimonial-role">Technical Support Manager, Safe</p>
-            </article>
-			<article class="testimonial-item">
-              <blockquote>“Serv.eth has moderated the Quicknode Discord around the clock for more than four years. They keep the server tidy and the community safe, point builders to the right resources, and help them get the most out of Quicknode. That coverage lets our team focus on bigger operations knowing the community is in good hands.”</blockquote>
-              <p class="testimonial-author">Nick Shklovsky</p>
-              <p class="testimonial-role">Growth, Quicknode</p>
-            </article>
-            <article class="testimonial-item">
-              <blockquote>“The Serveth team were a reliable partner to Sablier for over two years, offering great value for money. They handled our customer support so well that we could pretty much forget about it internally and focus on building.”</blockquote>
-              <p class="testimonial-author">Paul Berg</p>
-              <p class="testimonial-role">Co-founder, Sablier Labs</p>
-            </article>        
+          <div class="testimonials-heading">
+            <div>
+              <p class="section-kicker">03 / Testimonials</p>
+              <h2 class="section-title">What our clients say about us</h2>        
+          <div class="testimonial-carousel" role="region" aria-roledescription="carousel" aria-label="Client testimonials">
+            <div class="testimonial-viewport">
+              <div class="testimonial-track">
+                <article class="testimonial-card" aria-label="Testimonial 1 of 3">
+                  <div class="testimonial-logo-wrap"><img src="images/c_logo-Safe.png" alt="Safe logo" /><span aria-hidden="true">“</span></div>
+                  <blockquote>“Safe is extremely grateful for service the serv.eth team provides. They're able to operate autonomously in ambiguity and have been extremely helpful during challenging situations, all while still managing to deliver an exceptional service.”</blockquote>
+                  <div class="testimonial-person"><p class="testimonial-author">Rudy Dube</p><p class="testimonial-role">Technical Support Manager</p><p class="testimonial-company">Safe</p></div>
+                </article>              
+                <article class="testimonial-card" aria-label="Testimonial 2 of 3">
+                  <div class="testimonial-logo-wrap"><img src="images/c_logo-Quicknode.svg" alt="Quicknode logo" /><span aria-hidden="true">“</span></div>
+                  <blockquote>“Serv.eth has moderated the Quicknode Discord around the clock for more than four years. They keep the server tidy and the community safe, point builders to the right resources, and help them get the most out of Quicknode. That coverage lets our team focus on bigger operations knowing the community is in good hands.”</blockquote>
+                  <div class="testimonial-person"><p class="testimonial-author">Nick Shklovsky</p><p class="testimonial-role">Growth/p><p class="testimonial-company">Quicknode</p></div>
+                </article>
+                <article class="testimonial-card" aria-label="Testimonial 3 of 3">
+                  <div class="testimonial-logo-wrap"><img src="images/c_logo-Sablier.svg" alt="Sablier logo" /><span aria-hidden="true">“</span></div>
+                  <blockquote>“The Serveth team were a reliable partner to Sablier for over two years, offering great value for money. They handled our customer support so well that we could pretty much forget about it internally and focus on building.”</blockquote>
+                  <div class="testimonial-person"><p class="testimonial-author">Paul Berg</p><p class="testimonial-role">Sablier Labs</p><p class="testimonial-company">Sablier Labs</p></div>
+                </article>                      
+              </div>
+            </div>
+            <div class="carousel-footer">
+              <p class="carousel-count" aria-live="polite"><span>01</span> / 06</p>
+              <div class="carousel-dots" aria-label="Choose testimonial"></div>
+              <div class="carousel-actions">
+                <button type="button" class="icon-button testimonial-prev" aria-label="Previous testimonial"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg></button>
+                <button type="button" class="icon-button testimonial-next" aria-label="Next testimonial"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg></button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -204,27 +218,23 @@
             <p class="section-kicker">04 / Pricing</p>
             <h2 class="section-title">Simple pricing that scales with your community.</h2>
           </div>
-          <img class="pricing-art" src="img/pricing-image.svg" alt="Cryptocurrency payment illustration" loading="lazy" />
+          <img class="pricing-art" src="images/pricing-image.svg" alt="Cryptocurrency payment illustration" loading="lazy" />
         </div>
-        <div class="price-grid">
-          <article class="price-item">
-            <p class="price-amount">$500</p>
-            <p class="price-unit">Per month</p>
-            <p class="price-note">The complete support foundation</p>
-          </article>
-          <article class="price-item">
-            <p class="price-amount">$0.04</p>
-            <p class="price-unit">Per message</p>
-            <p class="price-note">First 20,000 Free</p>
-          </article>
-          <article class="price-item">
-            <p class="price-amount">$3</p>
-            <p class="price-unit">Per question</p>
-            <p class="price-note">First 100 Free</p>
-          </article>
+        <div class="pricing-layout">
+          <article class="pricing-card featured"><p class="price-eyebrow">Core service</p><p class="price-amount">$500</p><p class="price-unit">Per month</p><p class="price-note">Complete support foundation</p><p class="price-summary">Discord onboarding, Ethereum and product support, plus around-the-clock presence.</p><button class="details-button" type="button" data-dialog="monthly-details">Details <span aria-hidden="true">→</span></button></article>
+          <article class="pricing-card"><p class="price-eyebrow">Usage</p><p class="price-amount">$0.04</p><p class="price-unit">Per extra message</p><p class="price-note">First 20,000 included</p><p class="price-summary">Coverage for higher-volume channels when your community grows.</p><button class="details-button" type="button" data-dialog="message-details">Details <span aria-hidden="true">→</span></button></article>
+          <article class="pricing-card"><p class="price-eyebrow">Usage</p><p class="price-amount">$3</p><p class="price-unit">Per extra question</p><p class="price-note">First 100 included</p><p class="price-summary">One support session, from troubleshooting through escalation.</p><button class="details-button" type="button" data-dialog="question-details">Details <span aria-hidden="true">→</span></button></article>
+          <article class="pricing-card"><p class="price-eyebrow">Add-on</p><p class="price-amount">$100</p><p class="price-unit">Per month</p><p class="price-note">Additional chat platform</p><p class="price-summary">Extend support to Telegram, Intercom, or another chat platform.</p><button class="details-button" type="button" data-dialog="chat-details">Details <span aria-hidden="true">→</span></button></article>
+          <article class="pricing-card"><p class="price-eyebrow">Add-on</p><p class="price-amount">$200</p><p class="price-unit">Per month</p><p class="price-note">Additional non-chat platform</p><p class="price-summary">Add email or another case-based support platform.</p><button class="details-button" type="button" data-dialog="nonchat-details">Details <span aria-hidden="true">→</span></button></article>
         </div>
-        <p class="price-footnote">Pay in ETH, DAI, or USDC as preferred modes of payment, but we are open to accepting payment in other coins/tokens as long as they are liquid enough for us to convert them on receipt.</p>
+        <div class="pricing-foot"><p>Pay in ETH, DAI, or USDC. Additional tokens considered on request.</p><a href="#contact" class="pricing-contact-link">Talk through your setup <span aria-hidden="true">→</span></a></div>
       </section>
+
+      <dialog id="monthly-details" class="pricing-dialog"><button class="dialog-close" aria-label="Close details">×</button><p class="price-eyebrow">Core service</p><h2>$500 per month</h2><p class="dialog-lead">Complete support foundation</p><div class="dialog-copy"><p>$500 in ETH, DAI, or USDC gets the team started. We learn your product, join your Discord, and begin helping with wallet, gas, pending transaction, and basic product questions.</p><p>The monthly fee covers selected channels generating up to 20,000 messages and up to 100 support questions. Coverage is 24/7, excluding one-hour meal breaks and catastrophic events.</p><p>Optional moderation can also cover spam and scams while the team is present in your channels.</p></div><a href="#contact" class="dialog-contact">Start a conversation →</a></dialog>
+      <dialog id="message-details" class="pricing-dialog"><button class="dialog-close" aria-label="Close details">×</button><p class="price-eyebrow">Usage</p><h2>$0.04 per extra message</h2><p class="dialog-lead">First 20,000 included</p><div class="dialog-copy"><p>High-volume spaces such as trading, speculation, or bot channels can be monitored so support requests are not missed and moderation coverage remains complete.</p><p>The first 20,000 messages read each month are included. Each additional message is $0.04, and selected channels can be muted to keep costs focused on critical support areas.</p></div><a href="#contact" class="dialog-contact">Start a conversation →</a></dialog>
+      <dialog id="question-details" class="pricing-dialog"><button class="dialog-close" aria-label="Close details">×</button><p class="price-eyebrow">Usage</p><h2>$3 per extra question</h2><p class="dialog-lead">First 100 included</p><div class="dialog-copy"><p>A question can range from basic product guidance to involved troubleshooting. If it cannot be resolved, the team gathers context, escalates it, and sets expectations with the user.</p><p>For billing, each support session counts as one question even when several related questions are handled. A return on another day is treated as a new session.</p></div><a href="#contact" class="dialog-contact">Start a conversation →</a></dialog>
+      <dialog id="chat-details" class="pricing-dialog"><button class="dialog-close" aria-label="Close details">×</button><p class="price-eyebrow">Add-on</p><h2>$100 per month</h2><p class="dialog-lead">Additional chat platform</p><div class="dialog-copy"><p>$100 per month is added for each additional chat support platform, such as Telegram or Intercom.</p><p>The add-on includes the same around-the-clock service. Questions above the included allowance remain $3 per question or case.</p></div><a href="#contact" class="dialog-contact">Start a conversation →</a></dialog>
+      <dialog id="nonchat-details" class="pricing-dialog"><button class="dialog-close" aria-label="Close details">×</button><p class="price-eyebrow">Add-on</p><h2>$200 per month</h2><p class="dialog-lead">Additional non-chat platform</p><div class="dialog-copy"><p>$200 per month is added for each non-chat support platform, such as email.</p><p>The add-on includes the same around-the-clock service. Overage is $5 per resolved case.</p></div><a href="#contact" class="dialog-contact">Start a conversation →</a></dialog>
 
       <!-- Contact -->
       <section id="contact" class="contact-band">
