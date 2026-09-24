@@ -170,7 +170,7 @@ ul { padding: 0; list-style: none; }
 .icon-button { display: grid; width: 2.75rem; height: 2.75rem; place-items: center; border: 1px solid var(--border); border-radius: 50%; color: var(--foreground); }
 
 .pricing-head { display: grid; align-items: end; gap: 3rem; }
-.pricing-art { display: none; width: 11rem; }
+.pricing-art { display: none; width: 18rem; }
 .pricing-layout { margin-top: 3.5rem; display: grid; gap: 1rem; }
 .pricing-card { display: flex; min-height: 22rem; flex-direction: column; border: 1px solid var(--border); border-radius: 0.5rem; background: var(--surface); padding: 1.75rem; box-shadow: 0 14px 36px color-mix(in oklch, var(--foreground) 5%, transparent); }
 .pricing-card.featured { background: var(--strong); color: var(--strong-foreground); border-color: var(--strong); }
