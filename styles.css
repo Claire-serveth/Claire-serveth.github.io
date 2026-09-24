@@ -158,7 +158,6 @@ ul { padding: 0; list-style: none; }
 .testimonial-person { display: grid; grid-template-columns: 1fr auto; gap: 0.35rem 1rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
 .testimonial-author { font-size: 0.9rem; font-weight: 700; }
 .testimonial-role { grid-column: 1; color: var(--muted-foreground); font-size: 0.8rem; }
-.testimonial-company { grid-column: 2; grid-row: 1 / span 2; align-self: center; color: var(--primary); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
 .carousel-footer { margin-top: 1.5rem; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1rem; }
 .carousel-count { font-size: 0.75rem; font-weight: 700; }
 .carousel-dots { display: flex; justify-content: center; gap: 0.25rem; }
