@@ -172,46 +172,27 @@
         </div>
       </section>
 
-      <!-- Testimonials -->
+     <!-- Testimonials -->
       <section id="testimonials" class="testimonials-section">
         <div class="testimonials-inner">
-          <div class="testimonials-heading">
-            <div>
-              <p class="section-kicker">03 / Testimonials</p>
-              <h2 class="section-title">What our clients say about us</h2>        
-          <div class="testimonial-carousel" role="region" aria-roledescription="carousel" aria-label="Client testimonials">
-            <div class="testimonial-viewport">
-              <div class="testimonial-track">
-                <article class="testimonial-card" aria-label="Testimonial 1 of 4">
-                  <div class="testimonial-logo-wrap"><img src="img/c_logo-Safe.png" alt="Safe logo" /><span aria-hidden="true">“</span></div>
-                  <blockquote>“Safe is extremely grateful for service the serv.eth team provides. They're able to operate autonomously in ambiguity and have been extremely helpful during challenging situations, all while still managing to deliver an exceptional service.”</blockquote>
-                  <div class="testimonial-person"><p class="testimonial-author">Rudy Dube</p><p class="testimonial-role">Technical Support Manager</p></div>
-                </article>              
-                <article class="testimonial-card" aria-label="Testimonial 2 of 4">
-                  <div class="testimonial-logo-wrap"><img src="img/c_logo-Quicknode.svg" alt="Quicknode logo" /><span aria-hidden="true">“</span></div>
-                  <blockquote>“Serv.eth has moderated the Quicknode Discord around the clock for more than four years. They keep the server tidy and the community safe, point builders to the right resources, and help them get the most out of Quicknode. That coverage lets our team focus on bigger operations knowing the community is in good hands.”</blockquote>
-                  <div class="testimonial-person"><p class="testimonial-author">Nick Shklovsky</p><p class="testimonial-role">Growth</p></div>
-                </article>
-                <article class="testimonial-card" aria-label="Testimonial 3 of 4">
-                  <div class="testimonial-logo-wrap"><img src="img/c_logo-Sablier.svg" alt="Sablier logo" /><span aria-hidden="true">“</span></div>
-                  <blockquote>“The Serveth team were a reliable partner to Sablier for over two years, offering great value for money. They handled our customer support so well that we could pretty much forget about it internally and focus on building.”</blockquote>
-                  <div class="testimonial-person"><p class="testimonial-author">Paul Berg</p><p class="testimonial-role">Co-founder</p></div>
-                </article>  
-				<article class="testimonial-card" aria-label="Testimonial 4 of 4">
-                  <div class="testimonial-logo-wrap"><img src="" alt="Add logo" /><span aria-hidden="true">“</span></div>
-                  <blockquote>“Add approved testimonial”</blockquote>
-                  <div class="testimonial-person"><p class="testimonial-author">Client Name</p><p class="testimonial-role">Role</p></div>
-                </article> 
-              </div>
-            </div>
-            <div class="carousel-footer">
-              <p class="carousel-count" aria-live="polite"><span>01</span> / 04</p>
-              <div class="carousel-dots" aria-label="Choose testimonial"></div>
-              <div class="carousel-actions">
-                <button type="button" class="icon-button testimonial-prev" aria-label="Previous testimonial"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg></button>
-                <button type="button" class="icon-button testimonial-next" aria-label="Next testimonial"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg></button>
-              </div>
-            </div>
+          <p class="section-kicker">03 / Testimonials</p>
+          <h2 class="section-title">What our clients say about us</h2>
+          <div class="testimonial-grid">
+            <article class="testimonial-item">
+              <blockquote>“Safe is extremely grateful for service the serv.eth team provides. They're able to operate autonomously in ambiguity and have been extremely helpful during challenging situations, all while still managing to deliver an exceptional service.”</blockquote>
+              <p class="testimonial-author">Rudy Dube</p>
+              <p class="testimonial-role">Technical Support Manager, Safe</p>
+            </article>
+			<article class="testimonial-item">
+              <blockquote>“Serv.eth has moderated the Quicknode Discord around the clock for more than four years. They keep the server tidy and the community safe, point builders to the right resources, and help them get the most out of Quicknode. That coverage lets our team focus on bigger operations knowing the community is in good hands.”</blockquote>
+              <p class="testimonial-author">Nick Shklovsky</p>
+              <p class="testimonial-role">Growth, Quicknode</p>
+            </article>
+            <article class="testimonial-item">
+              <blockquote>“The Serveth team were a reliable partner to Sablier for over two years, offering great value for money. They handled our customer support so well that we could pretty much forget about it internally and focus on building.”</blockquote>
+              <p class="testimonial-author">Paul Berg</p>
+              <p class="testimonial-role">Co-founder, Sablier Labs</p>
+            </article>        
           </div>
         </div>
       </section>
@@ -265,29 +246,7 @@
       <p>Ethereum support, around the clock.</p>
     </footer>
 	<script>
-      (() => {
-        const carousel = document.querySelector('.testimonial-carousel');
-        const track = carousel?.querySelector('.testimonial-track');
-        const cards = [...(carousel?.querySelectorAll('.testimonial-card') || [])];
-        const count = carousel?.querySelector('.carousel-count span');
-        const dots = carousel?.querySelector('.carousel-dots');
-        let selected = 0;
-        const show = (index) => {
-          selected = (index + cards.length) % cards.length;
-          track?.style.setProperty('--testimonial-index', selected);
-          if (count) count.textContent = String(selected + 1).padStart(2, '0');
-          dots?.querySelectorAll('button').forEach((dot, i) => dot.setAttribute('aria-current', i === selected ? 'true' : 'false'));
-        };
-        cards.forEach((_, index) => {
-          const dot = document.createElement('button');
-          dot.type = 'button'; dot.className = 'carousel-dot'; dot.setAttribute('aria-label', `Show testimonial ${index + 1}`);
-          dot.addEventListener('click', () => show(index)); dots?.append(dot);
-        });
-        carousel?.querySelector('.testimonial-prev')?.addEventListener('click', () => show(selected - 1));
-        carousel?.querySelector('.testimonial-next')?.addEventListener('click', () => show(selected + 1));
-        carousel?.addEventListener('keydown', (event) => { if (event.key === 'ArrowLeft') show(selected - 1); if (event.key === 'ArrowRight') show(selected + 1); });
-        show(0);
-
+      (() => {        
         document.querySelectorAll('[data-dialog]').forEach((button) => button.addEventListener('click', () => document.getElementById(button.dataset.dialog)?.showModal()));
         document.querySelectorAll('.pricing-dialog').forEach((dialog) => {
           dialog.querySelector('.dialog-close')?.addEventListener('click', () => dialog.close());
