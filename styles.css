@@ -167,6 +167,8 @@ ul { padding: 0; list-style: none; }
 .carousel-dot[aria-current="true"]::after { width: 1.4rem; background: var(--primary); }
 .carousel-actions { display: flex; gap: 0.5rem; }
 .icon-button { display: grid; width: 2.75rem; height: 2.75rem; place-items: center; border: 1px solid var(--border); border-radius: 50%; color: var(--foreground); }
+.icon-button:hover { transform: translateY(-2px); }
+.icon-button:hover { background: color-mix(in oklch, var(--hero-foreground) 10%, transparent); }
 
 .pricing-head { display: grid; align-items: end; gap: 3rem; }
 .pricing-art { display: none; width: 18rem; }
