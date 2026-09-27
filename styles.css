@@ -224,8 +224,8 @@ ul { padding: 0; list-style: none; }
   .about-inner { grid-template-columns: 1.1fr 0.9fr; }
   .testimonials-section { padding: 9rem 2.5rem; }
   .testimonials-heading { grid-template-columns: 1fr auto; }
-  .testimonial-card { min-width: 100%; margin: 0; }
-  .testimonial-track { gap: 0; transform: translateX(calc(var(--testimonial-index) * -100%)); }
+  .testimonial-card { min-width: calc(56% - 0.55rem); }
+  .testimonial-track { transform: translateX(calc(var(--testimonial-index) * (-56% - 0.7rem))); }
   .pricing-head { grid-template-columns: 1fr auto; }
   .pricing-art { display: block; }
   .pricing-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
