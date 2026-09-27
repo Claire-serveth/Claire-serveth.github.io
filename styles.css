@@ -197,6 +197,8 @@ ul { padding: 0; list-style: none; }
 .dialog-copy p { padding-left: 1.4rem; position: relative; }
 .dialog-copy p::before { content: "✓"; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
 .dialog-contact { display: inline-flex; margin-top: 2rem; border-color: var(--primary); background: var(--primary); color: var(--accent-foreground); }
+.dialog-contact:hover { transform: translateY(-2px); }
+.dialog-contact:hover { background: color-mix(in oklch, var(--hero-foreground) 10%, transparent); }
 
 .contact-band { padding: 6rem 1.25rem; text-align: center; color: var(--hero-foreground); background: linear-gradient(125deg, oklch(0.24 0.11 249), oklch(0.31 0.15 309)); }
 .contact-inner { margin: 0 auto; max-width: 48rem; }
