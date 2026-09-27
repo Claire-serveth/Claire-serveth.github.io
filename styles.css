@@ -181,6 +181,8 @@ ul { padding: 0; list-style: none; }
 .featured .price-summary { color: var(--hero-muted); }
 .details-button, .pricing-contact-link, .dialog-contact { display: flex; min-height: 2.75rem; align-items: center; justify-content: space-between; border: 1px solid var(--border); border-radius: 0.375rem; padding: 0.65rem 1rem; background: transparent; color: inherit; font: inherit; font-size: 0.875rem; font-weight: 700; cursor: pointer; }
 .details-button { margin-top: auto; width: 100%; }
+.details-button:hover { transform: translateY(-2px); }
+.details-button:hover { background: color-mix(in oklch, var(--hero-foreground) 10%, transparent); }
 .featured .details-button { border-color: var(--accent); background: var(--accent); color: var(--accent-foreground); }
 .pricing-foot { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; color: var(--muted-foreground); font-size: 0.875rem; }
 .pricing-dialog { position: fixed; width: min(42rem, calc(100% - 2rem)); max-height: 82vh; overflow-y: auto; border: 1px solid var(--border); border-radius: 0.5rem; padding: 2rem; background: var(--background); color: var(--foreground); box-shadow: 0 25px 80px color-mix(in oklch, var(--foreground) 25%, transparent); }
