@@ -133,7 +133,7 @@ ul { padding: 0; list-style: none; }
 .service-art { margin: 0 auto; width: 100%; max-width: 43rem; }
 .feature-list { margin-top: 2rem; display: grid; gap: 1rem; font-size: 0.875rem; font-weight: 600; }
 .feature-list li { display: flex; align-items: center; gap: 0.75rem; }
-.check-icon { display: inline-flex; height: 1.7rem; width: 1.7rem; align-items: center; justify-content: center; border-radius: 999px; background: color-mix(in oklch, var(--primary) 16%, transparent); color: var(--primary); }
+.check-icon { display: inline-flex; height: 1.7rem; width: 1.7rem; align-items: center; justify-content: center; border-radius: 999px; background: color-mix(in oklch, var(--primary) 16%, transparent); }
 
 .about-band { padding: 6rem 1.25rem; background: linear-gradient(135deg, oklch(0.18 0.08 279), oklch(0.28 0.12 250)); }
 .about-inner { margin: 0 auto; max-width: 72rem; display: grid; align-items: center; gap: 4rem; }
@@ -148,11 +148,11 @@ ul { padding: 0; list-style: none; }
 .testimonials-heading { display: grid; gap: 1.5rem; align-items: end; }
 .testimonials-heading > p { max-width: 20rem; color: var(--muted-foreground); line-height: 1.6; }
 .testimonial-carousel { position: relative; margin-top: 3.5rem; outline: none; }
-.testimonial-viewport { overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none; padding-bottom: 0.25rem; }
+.testimonial-viewport { overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none; }
 .testimonial-viewport::-webkit-scrollbar { display: none; }
 .testimonial-track { display: flex; gap: 1.25rem; }
-.testimonial-card { display: flex; flex: 0 0 100%; min-width: 100%; min-height: 27rem; scroll-snap-align: start; flex-direction: column; justify-content: space-between; border: 1px solid var(--border); border-radius: 0.5rem; background: var(--surface); padding: 2rem; box-shadow: 0 18px 45px color-mix(in oklch, var(--foreground) 7%, transparent); }
-.carousel-arrow { position: absolute; top: 50%; z-index: 5; display: grid; width: 3rem; height: 3rem; transform: translateY(-50%); place-items: center; border: 1px solid var(--border); border-radius: 50%; background: color-mix(in oklch, var(--background) 86%, transparent); backdrop-filter: blur(8px); color: var(--foreground); cursor: pointer; box-shadow: 0 10px 28px color-mix(in oklch, var(--foreground) 14%, transparent); transition: opacity 180ms ease, transform 140ms ease, background 180ms ease; }
+.testimonial-card { display: flex; flex: 0 0 100%; min-width: 100%; min-height: 27rem; scroll-snap-align: start; flex-direction: column; justify-content: space-between; border: 1px solid var(--border); border-radius: 0.5rem; background: var(--surface); padding: 1.75rem; }
+.carousel-arrow { position: absolute; top: 50%; z-index: 5; display: grid; width: 3rem; height: 3rem; transform: translateY(-50%); place-items: center; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--foreground); cursor: pointer; transition: transform 180ms ease, background 180ms ease; }
 .carousel-arrow.prev { left: -0.5rem; }
 .carousel-arrow.next { right: -0.5rem; }
 .carousel-arrow:hover { background: var(--background); }
@@ -176,7 +176,7 @@ ul { padding: 0; list-style: none; }
 .pricing-head { display: grid; align-items: end; gap: 3rem; }
 .pricing-art { display: none; width: 18rem; }
 .pricing-layout { margin-top: 3.5rem; display: grid; gap: 1rem; }
-.pricing-card { display: flex; min-height: 22rem; flex-direction: column; border: 1px solid var(--border); border-radius: 0.5rem; background: var(--surface); padding: 1.75rem; box-shadow: 0 14px 36px color-mix(in oklch, var(--foreground) 5%, transparent); }
+.pricing-card { display: flex; min-height: 22rem; flex-direction: column; border: 1px solid var(--border); border-radius: 0.5rem; background: var(--surface); padding: 1.75rem; box-shadow: 0 14px 36px color-mix(in oklch, var(--border) 45%, transparent); }
 .pricing-card.featured { background: var(--strong); color: var(--strong-foreground); border-color: var(--strong); }
 .price-eyebrow { color: var(--primary); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
 .price-amount { margin-top: 1.5rem; font-size: 3rem; font-weight: 600; }
@@ -184,13 +184,13 @@ ul { padding: 0; list-style: none; }
 .price-note { margin-top: 1.5rem; font-size: 0.9rem; font-weight: 700; }
 .price-summary { margin: 0.75rem 0 1.75rem; color: var(--muted-foreground); font-size: 0.875rem; line-height: 1.6; }
 .featured .price-summary { color: var(--hero-muted); }
-.details-button, .pricing-contact-link, .dialog-contact { display: flex; min-height: 2.75rem; align-items: center; justify-content: space-between; border: 1px solid var(--border); border-radius: 0.375rem; padding: 0.65rem 1rem; background: transparent; color: inherit; font: inherit; font-size: 0.875rem; font-weight: 700; cursor: pointer; }
+.details-button, .pricing-contact-link, .dialog-contact { display: flex; min-height: 2.75rem; align-items: center; justify-content: space-between; border: 1px solid var(--border); border-radius: 0.375rem; padding: 0.65rem 1rem; background: var(--surface); color: var(--foreground); font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: transform 180ms ease, background 180ms ease; }
 .details-button { margin-top: auto; width: 100%; }
 .details-button:hover { transform: translateY(-2px); }
 .details-button:hover { background: color-mix(in oklch, var(--hero-foreground) 10%, transparent); }
 .featured .details-button { border-color: var(--accent); background: var(--accent); color: var(--accent-foreground); }
 .pricing-foot { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; color: var(--muted-foreground); font-size: 0.875rem; }
-.pricing-dialog { position: fixed; width: min(42rem, calc(100% - 2rem)); max-height: 82vh; overflow-y: auto; border: 1px solid var(--border); border-radius: 0.5rem; padding: 2rem; background: var(--background); color: var(--foreground); box-shadow: 0 25px 80px color-mix(in oklch, var(--foreground) 25%, transparent); }
+.pricing-dialog { position: fixed; width: min(42rem, calc(100% - 2rem)); max-height: 82vh; overflow-y: auto; border: 1px solid var(--border); border-radius: 0.5rem; padding: 2rem; background: var(--background); }
 .pricing-dialog::backdrop { background: color-mix(in oklch, var(--footer) 78%, transparent); }
 .pricing-dialog h2 { margin-top: 1rem; font-size: clamp(2rem, 5vw, 3rem); }
 .dialog-close { position: absolute; top: 1rem; right: 1rem; width: 2.5rem; height: 2.5rem; border: 0; background: transparent; color: inherit; font-size: 1.75rem; cursor: pointer; }
@@ -212,6 +212,22 @@ ul { padding: 0; list-style: none; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 @keyframes fade-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 
+/* Mobile testimonial tweaks only */
+@media (max-width: 767px) {
+  .testimonial-track { gap: 0; }
+  .testimonial-card {
+    flex-basis: 100%;
+    min-width: 100%;
+    min-height: auto;
+    max-height: 22rem;
+  }
+  .testimonial-card blockquote {
+    font-size: clamp(0.95rem, 4vw, 1.15rem);
+    line-height: 1.4;
+  }
+  .carousel-arrow { display: none; }
+}
+
 @media (min-width: 768px) {
   .hero { padding-left: 2.5rem; padding-right: 2.5rem; }
   .nav-logo { height: 3.5rem; }
@@ -226,7 +242,7 @@ ul { padding: 0; list-style: none; }
   .about-inner { grid-template-columns: 1.1fr 0.9fr; }
   .testimonials-section { padding: 9rem 2.5rem; }
   .testimonials-heading { grid-template-columns: 1fr auto; }
-  .testimonial-card { flex-basis: calc(56% - 0.55rem); min-width: calc(56% - 0.55rem); }
+  .testimonial-card { flex-basis: calc(56% - 0.55rem); min-width: calc(56% - 0.55rem); min-height: 27rem; max-height: none; }
   .carousel-arrow.prev { left: -1.25rem; }
   .carousel-arrow.next { right: -1.25rem; }
   .pricing-head { grid-template-columns: 1fr auto; }
