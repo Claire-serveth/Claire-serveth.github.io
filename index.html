@@ -206,10 +206,6 @@
                 </article> 
               </div>
             </div>
-            <div class="carousel-footer">
-              <p class="carousel-count" aria-live="polite"><span>01</span> / 04</p>
-              <div class="carousel-dots" aria-label="Choose testimonial"></div>              
-            </div>
           </div>
         </div>
       </section>
@@ -267,8 +263,6 @@
         const carousel = document.querySelector('.testimonial-carousel');
         const viewport = carousel?.querySelector('.testimonial-viewport');
         const cards = [...(carousel?.querySelectorAll('.testimonial-card') || [])];
-        const count = carousel?.querySelector('.carousel-count span');
-        const dots = carousel?.querySelector('.carousel-dots');
         const prev = carousel?.querySelector('.testimonial-prev');
         const next = carousel?.querySelector('.testimonial-next');
         let selected = 0;
@@ -278,8 +272,6 @@
         const maxIndex = () => Math.max(0, cards.length - perView());
 
         const paint = () => {
-          if (count) count.textContent = String(selected + 1).padStart(2, '0');
-          dots?.querySelectorAll('button').forEach((dot, i) => dot.setAttribute('aria-current', i === selected ? 'true' : 'false'));
           if (prev) prev.disabled = selected <= 0;
           if (next) next.disabled = selected >= maxIndex();
         };
@@ -289,12 +281,6 @@
           viewport?.scrollTo({ left: selected * step(), behavior: 'smooth' });
           paint();
         };
-
-        cards.forEach((_, index) => {
-          const dot = document.createElement('button');
-          dot.type = 'button'; dot.className = 'carousel-dot'; dot.setAttribute('aria-label', `Show testimonial ${index + 1}`);
-          dot.addEventListener('click', () => goTo(index)); dots?.append(dot);
-        });
 
         prev?.addEventListener('click', () => goTo(selected - 1));
         next?.addEventListener('click', () => goTo(selected + 1));
