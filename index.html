@@ -206,10 +206,6 @@
                 </article> 
               </div>
             </div>
-			<div class="carousel-footer">
-              <p class="carousel-count" aria-live="polite"><span>01</span> / 04</p>
-              <div class="carousel-dots" aria-label="Choose testimonial"></div>              
-            </div>
           </div>
         </div>
       </section>
@@ -267,34 +263,31 @@
         const carousel = document.querySelector('.testimonial-carousel');
         const viewport = carousel?.querySelector('.testimonial-viewport');
         const cards = [...(carousel?.querySelectorAll('.testimonial-card') || [])];
-        const count = carousel?.querySelector('.carousel-count span');
-        const dots = carousel?.querySelector('.carousel-dots');
         const prev = carousel?.querySelector('.testimonial-prev');
         const next = carousel?.querySelector('.testimonial-next');
         let selected = 0;
 
-        const step = () => (cards[1] ? cards[1].offsetLeft - cards[0].offsetLeft : (cards[0]?.offsetWidth || 0));
+        const CARD_GAP = 20; // 1.25rem gap between cards, used when layout metrics are unavailable
+        const step = () => {
+          if (!cards.length || !cards[0]) return 0;
+          const delta = cards[1] ? cards[1].offsetLeft - cards[0].offsetLeft : 0;
+          if (delta > 10) return delta; // trust the real layout when it has rendered
+          const width = cards[0].offsetWidth || 0;
+          return width ? width + CARD_GAP : 300; // CSS not loaded yet: fall back to card width + gap
+        };
         const perView = () => Math.max(1, Math.round((viewport?.clientWidth || 1) / (step() || 1)));
         const maxIndex = () => Math.max(0, cards.length - perView());
 
         const paint = () => {
-          if (count) count.textContent = String(selected + 1).padStart(2, '0');
-          dots?.querySelectorAll('button').forEach((dot, i) => dot.setAttribute('aria-current', i === selected ? 'true' : 'false'));
           if (prev) prev.disabled = selected <= 0;
           if (next) next.disabled = selected >= maxIndex();
         };
 
         const goTo = (index) => {
           selected = Math.min(Math.max(index, 0), maxIndex());
-          viewport?.scrollTo({ left: selected * step(), behavior: 'smooth' });
+          if (viewport && step()) viewport.scrollTo({ left: selected * step(), behavior: 'smooth' });
           paint();
         };
-
-        cards.forEach((_, index) => {
-          const dot = document.createElement('button');
-          dot.type = 'button'; dot.className = 'carousel-dot'; dot.setAttribute('aria-label', `Show testimonial ${index + 1}`);
-          dot.addEventListener('click', () => goTo(index)); dots?.append(dot);
-        });
 
         prev?.addEventListener('click', () => goTo(selected - 1));
         next?.addEventListener('click', () => goTo(selected + 1));
@@ -312,8 +305,11 @@
             paint();
           }, 90);
         }, { passive: true });
-        window.addEventListener('resize', () => paint());
-        paint(); 
+        window.addEventListener('resize', () => {
+          selected = Math.min(selected, maxIndex()); // per-view count changes with width
+          paint();
+        });
+        paint();
 
         document.querySelectorAll('[data-dialog]').forEach((button) => button.addEventListener('click', () => document.getElementById(button.dataset.dialog)?.showModal()));
         document.querySelectorAll('.pricing-dialog').forEach((dialog) => {
