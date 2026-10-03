@@ -320,6 +320,20 @@
           dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
         });
       })();
-    </script>	  
+    </script>
+	<script>
+      document.addEventListener('click', (event) => {
+        const link = event.target.closest('a[href^="#"]');
+        if (!link) return;
+        const id = link.getAttribute('href').slice(1);
+        if (!['service', 'about', 'testimonials', 'pricing'].includes(id)) return;
+        const target = document.getElementById(id);
+        if (!target) return;
+        event.preventDefault();
+        const fits = target.offsetHeight <= window.innerHeight;
+        target.scrollIntoView({ behavior: 'smooth', block: fits ? 'center' : 'start' });
+        history.pushState(null, '', '#' + id);
+      });
+    </script>
   </body>
 </html>
