@@ -234,17 +234,6 @@ ul { padding: 0; list-style: none; }
   .footer { flex-direction: row; padding-left: 2.5rem; padding-right: 2.5rem; }
 }
 
-@media (min-width: 768px) {
-  .content-section,
-  .about-band,
-  .testimonials-section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-}
-
 @media (min-width: 1024px) {
   .testimonial-card { flex-basis: calc(40% - 0.84rem); min-width: calc(40% - 0.84rem); }
   .pricing-layout { grid-template-columns: 1.3fr repeat(2, minmax(0, 1fr)); }
