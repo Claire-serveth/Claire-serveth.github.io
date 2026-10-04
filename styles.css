@@ -214,7 +214,7 @@ ul { padding: 0; list-style: none; }
   .nav-links { display: flex; }
   .hero-grid { grid-template-columns: 1.05fr 0.95fr; padding-top: 2rem; margin-top: 0; }
   .hero-art { justify-self: end; }
-  .content-section { padding: 8rem 2.5rem; } //edited from 9 to 8
+  .content-section { padding: 9rem 2.5rem; } 
   .split { grid-template-columns: 1fr 1fr; }
   .service-art-col { order: 1; }
   .service-copy-col { order: 2; }
