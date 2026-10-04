@@ -214,13 +214,13 @@ ul { padding: 0; list-style: none; }
   .nav-links { display: flex; }
   .hero-grid { grid-template-columns: 1.05fr 0.95fr; padding-top: 2rem; margin-top: 0; }
   .hero-art { justify-self: end; }
-  .content-section { padding: 7rem 2.5rem; } //edited from 9 to 7
+  .content-section { padding: 8rem 2.5rem; } //edited from 9 to 8
   .split { grid-template-columns: 1fr 1fr; }
   .service-art-col { order: 1; }
   .service-copy-col { order: 2; }
-  .about-band { padding: 7rem 2.5rem; } //edited from 8 to 7
+  .about-band { padding: 8rem 2.5rem; } 
   .about-inner { grid-template-columns: 1.1fr 0.9fr; }
-  .testimonials-section { padding: 7rem 2.5rem; } //edited from 9 to 7
+  .testimonials-section { padding: 8rem 2.5rem; } //edited from 9 to 8
   .testimonials-heading { grid-template-columns: 1fr auto; }
   .testimonial-card { flex-basis: calc(56% - 0.55rem); min-width: calc(56% - 0.55rem); }
   .carousel-arrow.prev { left: -1.25rem; }
