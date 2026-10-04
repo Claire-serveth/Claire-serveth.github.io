@@ -321,22 +321,5 @@
         });
       })();
     </script>
-	<script>
-  	  document.addEventListener('click', (event) => {
-    	const link = event.target.closest('a[href^="#"]');
-    	if (!link) return;
-    	const id = link.getAttribute('href').slice(1);
-    	if (!['service', 'about', 'testimonials', 'pricing'].includes(id)) return;
-    	const target = document.getElementById(id);
-    	if (!target) return;
-    	event.preventDefault();
-
-    // Service, About Us, and Testimonials center directly in the screen.
-    // Pricing stays at 'start' so its top heading isn't cut off (since it is ~1,400px tall).
-    	const blockPosition = id === 'pricing' ? 'start' : 'center';
-    	target.scrollIntoView({ behavior: 'smooth', block: blockPosition });
-    	history.pushState(null, '', '#' + id);
-  	});
-	</script>
   </body>
 </html>
