@@ -126,7 +126,7 @@ ul { padding: 0; list-style: none; }
 .client-logo img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
 
 /* Sections */
-.content-section { margin-inline: auto; max-width: 72rem; padding: 7rem 1.25rem; }
+.content-section { margin-inline: auto; max-width: 72rem; padding: 5rem 1.25rem; } // edited from 7 to 5
 .section-title { max-width: 38rem; font-size: clamp(2.35rem, 5vw, 4rem); font-weight: 600; line-height: 1.08; }
 .section-copy { margin-top: 1.75rem; max-width: 38rem; font-size: 1.05rem; line-height: 1.85; color: var(--muted-foreground); }
 
@@ -136,7 +136,7 @@ ul { padding: 0; list-style: none; }
 .feature-list li { display: flex; align-items: center; gap: 0.75rem; }
 .check-icon { display: inline-flex; height: 1.7rem; width: 1.7rem; align-items: center; justify-content: center; border-radius: 999px; background: color-mix(in oklch, var(--primary) 16%, transparent); }
 
-.about-band { padding: 6rem 1.25rem; background: linear-gradient(135deg, oklch(0.18 0.08 279), oklch(0.28 0.12 250)); }
+.about-band { padding: 5rem 1.25rem; background: linear-gradient(135deg, oklch(0.18 0.08 279), oklch(0.28 0.12 250)); } //edited from 6 to 5
 .about-inner { margin: 0 auto; max-width: 72rem; display: grid; align-items: center; gap: 4rem; }
 .about-kicker { color: var(--accent); }
 .about-title { color: var(--about-foreground); }
@@ -144,7 +144,7 @@ ul { padding: 0; list-style: none; }
 .about-line { margin-top: 1.5rem; font-size: 1.125rem; font-weight: 500; color: var(--about-foreground); }
 .about-art { margin: 0 auto; width: 100%; max-width: 24rem; }
 
-.testimonials-section { padding: 7rem 1.25rem; background: var(--background); border-bottom: 1px solid var(--border); }
+.testimonials-section { padding: 5rem 1.25rem; background: var(--background); border-bottom: 1px solid var(--border); } //edited from 7 to 5
 .testimonials-inner { margin: 0 auto; max-width: 72rem; }
 .testimonials-heading { display: grid; gap: 1.5rem; align-items: end; }
 .testimonials-heading > p { max-width: 20rem; color: var(--muted-foreground); line-height: 1.6; }
@@ -214,13 +214,13 @@ ul { padding: 0; list-style: none; }
   .nav-links { display: flex; }
   .hero-grid { grid-template-columns: 1.05fr 0.95fr; padding-top: 2rem; margin-top: 0; }
   .hero-art { justify-self: end; }
-  .content-section { padding: 9rem 2.5rem; }
+  .content-section { padding: 5rem 2.5rem; } //edited from 9 to 5
   .split { grid-template-columns: 1fr 1fr; }
   .service-art-col { order: 1; }
   .service-copy-col { order: 2; }
-  .about-band { padding: 8rem 2.5rem; }
+  .about-band { padding: 5rem 2.5rem; } //edited from 8 to 5
   .about-inner { grid-template-columns: 1.1fr 0.9fr; }
-  .testimonials-section { padding: 9rem 2.5rem; }
+  .testimonials-section { padding: 5rem 2.5rem; } //edited from 9 to 5
   .testimonials-heading { grid-template-columns: 1fr auto; }
   .testimonial-card { flex-basis: calc(56% - 0.55rem); min-width: calc(56% - 0.55rem); }
   .carousel-arrow.prev { left: -1.25rem; }
