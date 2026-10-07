@@ -306,6 +306,11 @@
     	window.addEventListener('resize', paint);
     	paint();
 
+		window.addEventListener('load', paint);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(paint);
+        setTimeout(paint, 200);
+        if (window.ResizeObserver && viewport) new ResizeObserver(paint).observe(viewport.firstElementChild || viewport);
+
         document.querySelectorAll('[data-dialog]').forEach((button) => button.addEventListener('click', () => document.getElementById(button.dataset.dialog)?.showModal()));
         document.querySelectorAll('.pricing-dialog').forEach((dialog) => {
           dialog.querySelector('.dialog-close')?.addEventListener('click', () => dialog.close());
