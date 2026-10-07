@@ -260,7 +260,6 @@
         const cards = [...(carousel?.querySelectorAll('.testimonial-card') || [])];
         const prev = carousel?.querySelector('.testimonial-prev');
         const next = carousel?.querySelector('.testimonial-next');
-        let selected = 0;
 
         const CARD_GAP = 20; 
         const step = () => {
@@ -270,41 +269,42 @@
           const width = cards[0].offsetWidth || 0;
           return width ? width + CARD_GAP : 300; 
         };
-        const perView = () => Math.max(1, Math.round((viewport?.clientWidth || 1) / (step() || 1)));
-        const maxIndex = () => Math.max(0, cards.length - perView());
+        const maxScroll = () => Math.max(0, (viewport?.scrollWidth || 0) - (viewport?.clientWidth || 0));
 
-        const paint = () => {
-          if (prev) prev.disabled = selected <= 0;
-          if (next) next.disabled = selected >= maxIndex();
-        };
+    	const paint = () => {
+      	  if (!viewport) return;
+      	  const current = viewport.scrollLeft;
+      	  const max = maxScroll();
+      	  if (prev) prev.disabled = current <= 5;
+      	  if (next) next.disabled = current >= max - 5;
+    	};
 
-        const goTo = (index) => {
-          selected = Math.min(Math.max(index, 0), maxIndex());
-          if (viewport && step()) viewport.scrollTo({ left: selected * step(), behavior: 'smooth' });
-          paint();
-        };
+    	prev?.addEventListener('click', () => {
+      	  viewport?.scrollBy({ left: -step(), behavior: 'smooth' });
+    	});
+    	next?.addEventListener('click', () => {
+      	  viewport?.scrollBy({ left: step(), behavior: 'smooth' });
+    	});
 
-        prev?.addEventListener('click', () => goTo(selected - 1));
-        next?.addEventListener('click', () => goTo(selected + 1));
-        carousel?.addEventListener('keydown', (event) => {
-          if (event.key === 'ArrowLeft') { event.preventDefault(); goTo(selected - 1); }
-          if (event.key === 'ArrowRight') { event.preventDefault(); goTo(selected + 1); }
-        });
+    	carousel?.addEventListener('keydown', (event) => {
+      	  if (event.key === 'ArrowLeft') {
+        	event.preventDefault();
+        	viewport?.scrollBy({ left: -step(), behavior: 'smooth' });
+      	  }
+      	  if (event.key === 'ArrowRight') {
+            event.preventDefault();
+            viewport?.scrollBy({ left: step(), behavior: 'smooth' });
+      	  }
+    	});
 
-        let scrollTimer;
-        viewport?.addEventListener('scroll', () => {
-          clearTimeout(scrollTimer);
-          scrollTimer = setTimeout(() => {
-            const s = step();
-            if (s) selected = Math.min(Math.round(viewport.scrollLeft / s), maxIndex());
-            paint();
-          }, 90);
-        }, { passive: true });
-        window.addEventListener('resize', () => {
-          selected = Math.min(selected, maxIndex()); 
-          paint();
-        });
-        paint();
+    	let scrollTimer;
+    	viewport?.addEventListener('scroll', () => {
+      	   clearTimeout(scrollTimer);
+      	   scrollTimer = setTimeout(paint, 50);
+    	}, { passive: true });
+
+    	window.addEventListener('resize', paint);
+    	paint();
 
         document.querySelectorAll('[data-dialog]').forEach((button) => button.addEventListener('click', () => document.getElementById(button.dataset.dialog)?.showModal()));
         document.querySelectorAll('.pricing-dialog').forEach((dialog) => {
